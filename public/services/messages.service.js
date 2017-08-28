@@ -18,6 +18,7 @@ app.service('MessageService', ['$http', function ($http) {
     self.addMessage = function (newMessage) {
         $http.post('/messages', newMessage).then(function (response) {
             console.log('post request has been hit', response);
+            self.getMessages();
         });
     };
 
