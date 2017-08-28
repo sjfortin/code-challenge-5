@@ -1,5 +1,7 @@
 app.service('MessageService', ['$http', function ($http) {
 
+    var self = this;
+
     // Object to store the messages
     self.messages = {
         list: []

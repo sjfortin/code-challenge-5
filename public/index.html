@@ -1,11 +1,27 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Message Board App</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-    </head>
-    <body>
-    </body>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Message Board App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Scripts -->
+    <script src="vendors/angular.js"></script>
+    <script src="scripts/client.js"></script>
+
+    <!-- Services -->
+    <script src="services/messages.service.js"></script>
+</head>
+
+<body ng-app="MessageApp">
+    <div ng-controller="MessageController as vm">
+        {{vm}}
+        <input type="text" ng-model="vm.newMessage.name">
+        <input type="text" ng-model="vm.newMessage.message">
+        <button ng-click="vm.addMessage()">Submit Message</button>
+    </div>
+</body>
+
 </html>

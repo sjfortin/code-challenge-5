@@ -1,11 +1,19 @@
 var app = angular.module('MessageApp', []);
 
-app.controller('MessageController', ['MessageService', function(MessageService){
+app.controller('MessageController', ['MessageService', function (MessageService) {
 
+    console.log('MessageController loaded');
+    
     var self = this;
 
-    self.messages = MessageService.messages;
+    self.newMessage = {}
 
-    MessageService.getMessages();
+    self.addMessage = function() {
+        MessageService.addMessage(self.newMessage);
+        self.newMessage = {}
+    }
+
+    // self.messages = MessageService.messages;
+    // MessageService.getMessages();
 
 }]);
